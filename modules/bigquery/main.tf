@@ -19,7 +19,7 @@ provider "google" {
 resource "google_bigquery_dataset" "datasets" {
   for_each = local.datasets
 
-  project                     = var.project_id
+  project                     = "${var.project_id}"
   dataset_id                  = each.value["dataset_id"]
   friendly_name               = each.value["friendly_name"]
   description                 = each.value["description"]
@@ -30,7 +30,7 @@ resource "google_bigquery_dataset" "datasets" {
 resource "google_bigquery_table" "tables" {
   for_each = local.tables
 
-  project                     = var.project_id
+  project                     = "${var.project_id}"
   dataset_id                  = each.value["dataset_id"]
   table_id                    = each.value["table_id"]
   #time_partitioning           = each.value["time_partitioning"]
