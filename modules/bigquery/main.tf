@@ -13,6 +13,11 @@
 # limitations under the License.
 
 
+provider "google" {
+  project = "${var.project_id}"
+}
+
+
 resource "google_bigquery_dataset" "datasets" {
   for_each = local.datasets
 
