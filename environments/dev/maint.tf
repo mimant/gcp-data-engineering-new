@@ -20,6 +20,6 @@ provider "google" {
 
 module "bigquery" {
   source  = "../../modules/bigquery"
-  project = "${var.project_id}"
+  project_id = "${var.project_id}"
 }
 
