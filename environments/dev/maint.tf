@@ -15,11 +15,11 @@
 
 
 provider "google" {
-  project = "${var.project}"
+  project = "${var.project_id}"
 }
 
 module "bigquery" {
   source  = "../../modules/bigquery"
-  project = "${var.project}"
+  project = "${var.project_id}"
 }
 
