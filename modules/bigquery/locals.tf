@@ -1,3 +1,5 @@
+locals {
+
 datasets = {
    for file in fileset(path.module, "modules/resource/datasets/*json") :
     file => ( jsondecode(file("${path.module}/${file}")))
@@ -9,3 +11,4 @@ tables = {
     file => ( jsondecode(file("${path.module}/${file}")))
 
  }
+}
